@@ -1,0 +1,26 @@
+<svg width="520" height="320" viewBox="0 0 520 320" xmlns="http://www.w3.org/2000/svg">
+  <g opacity="0.16" fill="none" stroke="#ffffff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+    <!-- buku terbuka -->
+    <path d="M120 210 L120 110 C160 95 190 95 220 110 L220 210 C190 195 160 195 120 210 Z"/>
+    <path d="M220 210 L220 110 C250 95 280 95 320 110 L320 210 C280 195 250 195 220 210 Z"/>
+    <line x1="140" y1="130" x2="200" y2="122"/>
+    <line x1="140" y1="150" x2="200" y2="142"/>
+    <line x1="140" y1="170" x2="200" y2="162"/>
+    <line x1="240" y1="122" x2="300" y2="130"/>
+    <line x1="240" y1="142" x2="300" y2="150"/>
+    <line x1="240" y1="162" x2="300" y2="170"/>
+  </g>
+  <g opacity="0.22" fill="#ffd66a" stroke="none">
+    <!-- bulan sabit -->
+    <path d="M400 70 C420 70 436 86 436 106 C436 126 420 142 400 142 C414 132 422 120 422 106 C422 92 414 80 400 70 Z"/>
+    <!-- bintang kecil -->
+    <path d="M448 150 L452 160 L462 162 L452 166 L448 176 L444 166 L434 162 L444 160 Z"/>
+    <path d="M90 60 L93 68 L101 70 L93 73 L90 81 L87 73 L79 70 L87 68 Z"/>
+  </g>
+  <g opacity="0.14" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round">
+    <!-- pensil -->
+    <line x1="360" y1="230" x2="420" y2="170"/>
+    <path d="M420 170 L432 158 L444 170 L432 182 Z"/>
+    <line x1="356" y1="234" x2="364" y2="226"/>
+  </g>
+</svg>
