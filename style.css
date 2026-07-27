@@ -1,0 +1,257 @@
+:root{
+  --grad-start: #3355f4;
+  --grad-end: #7c3aed;
+  --bg: #f2f3fb;
+  --card-bg: #ffffff;
+  --text-dark: #1c2030;
+  --text-muted: #6b7280;
+  --pill-bg: rgba(255,255,255,0.16);
+  --pill-bg-active: rgba(255,255,255,0.32);
+  --accent: #4338ca;
+  --accent-soft: #eef0ff;
+}
+
+*{ box-sizing: border-box; }
+
+body{
+  margin: 0;
+  font-family: 'Segoe UI', 'Nunito', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text-dark);
+}
+
+/* ===== Header ===== */
+header.site-header{
+  background: linear-gradient(120deg, var(--grad-start), var(--grad-end));
+  color: white;
+  padding: 32px 32px 20px;
+  position: relative;
+}
+
+.header-top{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.header-top h1{
+  margin: 0;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.header-top p{
+  margin: 6px 0 0;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.badge-otomatis{
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.4);
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+nav.site-nav{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+nav.site-nav a{
+  background: var(--pill-bg);
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 9px 16px;
+  border-radius: 999px;
+  transition: background 0.15s ease;
+}
+
+nav.site-nav a:hover, nav.site-nav a:focus-visible{
+  background: var(--pill-bg-active);
+  outline: none;
+}
+
+nav.site-nav a.aktif{
+  background: white;
+  color: var(--accent);
+}
+
+/* ===== Layout ===== */
+main{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 24px 64px;
+}
+
+.grid-2{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 760px){
+  .grid-2{ grid-template-columns: 1fr; }
+}
+
+.kartu{
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 26px 26px;
+  box-shadow: 0 10px 30px rgba(60, 60, 120, 0.08);
+}
+
+.kartu h2{
+  margin: 0 0 6px;
+  font-size: 20px;
+  color: var(--text-dark);
+}
+
+.keterangan-kecil{
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0 0 18px;
+}
+
+/* ===== Item Tugas / Pengumuman ===== */
+.item{
+  padding: 16px 0;
+  border-bottom: 1px dashed #e3e5f0;
+}
+.item:last-child{ border-bottom: none; }
+
+.label-pill{
+  display: inline-block;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+}
+
+.item h3{
+  margin: 0 0 4px;
+  font-size: 17px;
+}
+
+.item h3 a{
+  color: #3346c4;
+  text-decoration: none;
+}
+.item h3 a:hover{ text-decoration: underline; }
+
+.item .tenggat{
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0 0 10px;
+}
+
+.item p.deskripsi{
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333a4d;
+}
+
+/* ===== Catatan sidebar ===== */
+ul.catatan-list{
+  margin: 0;
+  padding-left: 20px;
+  font-size: 15px;
+  line-height: 1.9;
+  color: #333a4d;
+}
+
+/* ===== Kartu ringkas beranda ===== */
+.kartu-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.kartu-ringkas{
+  background: var(--card-bg);
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 8px 24px rgba(60,60,120,0.07);
+  border-top: 4px solid var(--accent);
+}
+
+.kartu-ringkas .ikon{ font-size: 26px; display:block; margin-bottom: 10px; }
+.kartu-ringkas h3{ margin: 0 0 6px; font-size: 16px; color: var(--text-dark); }
+.kartu-ringkas p{ margin: 0 0 12px; font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+.kartu-ringkas a{ font-size: 13px; font-weight: 700; color: var(--accent); text-decoration: none; }
+.kartu-ringkas a:hover{ text-decoration: underline; }
+
+/* ===== Tabel jadwal ===== */
+table.jadwal{
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+table.jadwal th, table.jadwal td{
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid #eceefa;
+}
+table.jadwal th{
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* ===== Galeri ===== */
+.galeri-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+.galeri-item{
+  background: var(--card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(60,60,120,0.07);
+}
+.galeri-item .foto-placeholder{
+  aspect-ratio: 4/3;
+  background: linear-gradient(135deg, var(--accent-soft), #dfe3ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34px;
+}
+.galeri-item .keterangan{
+  padding: 10px 12px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* ===== Footer ===== */
+footer.site-footer{
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+footer.site-footer strong{ color: var(--accent); }
+
+/* ===== Status kosong / loading ===== */
+.status-muat{
+  font-size: 14px;
+  color: var(--text-muted);
+  padding: 8px 0;
+}
