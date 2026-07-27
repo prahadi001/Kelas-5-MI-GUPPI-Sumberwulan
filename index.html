@@ -31,11 +31,28 @@
     </nav>
   </header>
 
-  <div class="hero-foto">
-    <div class="bingkai">
-      <!-- Ganti dengan foto asli: <img src="assets/foto-kelas.jpg" alt="Kegiatan Kelas 5"> -->
-      <span class="ikon-besar">🖼️</span>
-      <span class="teks">Ganti dengan foto kelas asli — lihat catatan di bawah</span>
+  <div class="slider">
+    <div class="slider-bingkai">
+      <div class="slide aktif" style="background:linear-gradient(135deg,#4338ca,#7c3aed);">
+        <span class="ikon-besar">📚</span>
+        <span class="judul-slide">Semangat Belajar Kelas 5</span>
+      </div>
+      <div class="slide" style="background:linear-gradient(135deg,#0d9488,#0e7490);">
+        <span class="ikon-besar">🕌</span>
+        <span class="judul-slide">Kegiatan Keagamaan Bersama</span>
+      </div>
+      <div class="slide" style="background:linear-gradient(135deg,#c026d3,#db2777);">
+        <span class="ikon-besar">🎨</span>
+        <span class="judul-slide">Kreativitas Siswa Kelas 5</span>
+      </div>
+      <div class="slide" style="background:linear-gradient(135deg,#ea580c,#dc2626);">
+        <span class="ikon-besar">⚽</span>
+        <span class="judul-slide">Kegiatan Olahraga Ceria</span>
+      </div>
+
+      <button class="slider-panah kiri" aria-label="Sebelumnya">‹</button>
+      <button class="slider-panah kanan" aria-label="Berikutnya">›</button>
+      <div class="slider-titik"></div>
     </div>
   </div>
 
@@ -88,10 +105,18 @@
       </div>
     </div>
 
+    <div class="posting-terbaru">
+      <h2>Postingan Terbaru</h2>
+      <p class="keterangan-kecil">5 kabar terbaru dari Kelas 5, diambil otomatis dari posts/beranda-posts.json.</p>
+      <div class="posting-grid" id="posting-terbaru">
+        <p class="status-muat">Memuat postingan…</p>
+      </div>
+    </div>
+
     <p class="keterangan-kecil" style="margin-top:28px; text-align:center;">
-      Cara mengganti foto hero: buat folder <code>assets/</code> di GitHub, upload foto ke sana,
-      lalu di <code>index.html</code> ganti isi <code>&lt;div class="bingkai"&gt;</code> dengan
-      <code>&lt;img src="assets/nama-foto.jpg" alt="Kegiatan Kelas 5"&gt;</code>.
+      Cara mengganti slide dengan foto asli: buat folder <code>assets/</code> di GitHub, upload foto,
+      lalu di <code>index.html</code> tambahkan <code>&lt;img src="assets/nama-foto.jpg"&gt;</code>
+      di dalam <code>&lt;div class="slide"&gt;</code> yang ingin diganti.
     </p>
   </main>
 
@@ -99,5 +124,6 @@
     <p>© 2026/2027 <strong>Kelas 5 MI GUPPI Sumberwulan</strong></p>
   </footer>
 
+  <script src="common.js"></script>
 </body>
 </html>

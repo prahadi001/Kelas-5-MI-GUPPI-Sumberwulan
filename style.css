@@ -21,8 +21,9 @@ body{
   background-image:
     radial-gradient(560px circle at 4% -6%, rgba(51,85,244,0.08), transparent 55%),
     radial-gradient(560px circle at 97% 105%, rgba(124,58,237,0.10), transparent 55%),
-    radial-gradient(rgba(67,56,202,0.07) 1.4px, transparent 1.4px);
-  background-size: auto, auto, 26px 26px;
+    url('assets/pola-latar.svg');
+  background-repeat: no-repeat, no-repeat, repeat;
+  background-size: auto, auto, 64px 64px;
   background-attachment: fixed, fixed, fixed;
 }
 
@@ -45,7 +46,9 @@ body{
 
 /* ===== Header ===== */
 header.site-header{
-  background: linear-gradient(120deg, var(--grad-start), var(--grad-end));
+  background:
+    url('assets/hero-ilustrasi.svg') no-repeat right -20px top -10px / 480px,
+    linear-gradient(120deg, var(--grad-start), var(--grad-end));
   color: white;
   padding: 32px 32px 20px;
   position: relative;
@@ -137,29 +140,138 @@ nav.site-nav a.aktif{
   color: var(--accent);
 }
 
-/* ===== Foto Hero (Beranda) ===== */
-.hero-foto{
+/* ===== Slider Foto (Beranda) ===== */
+.slider{
   max-width: 1100px;
   margin: -34px auto 0;
   padding: 0 24px;
   position: relative;
   z-index: 2;
 }
-.hero-foto .bingkai{
+.slider-bingkai{
+  position: relative;
   border-radius: 20px;
   overflow: hidden;
-  aspect-ratio: 21/6;
-  background: linear-gradient(135deg, #e4e7ff, #f3e8ff);
+  aspect-ratio: 21/7;
+  box-shadow: 0 18px 40px rgba(51,42,140,0.18);
+}
+.slide{
+  position: absolute;
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 6px;
-  box-shadow: 0 18px 40px rgba(51,42,140,0.16);
+  gap: 8px;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+  text-align: center;
+  padding: 16px;
 }
-.hero-foto .bingkai span.ikon-besar{ font-size: 40px; }
-.hero-foto .bingkai span.teks{ font-size: 13px; color: var(--text-muted); font-weight: 600; }
-.hero-foto img{ width: 100%; height: 100%; object-fit: cover; display: block; }
+.slide.aktif{ opacity: 1; }
+.slide .ikon-besar{ font-size: 40px; }
+.slide .judul-slide{ font-size: 15px; font-weight: 700; text-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+.slide img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:-1; }
+
+.slider-titik{
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 7px;
+  z-index: 3;
+}
+.slider-titik button{
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.5);
+  cursor: pointer;
+  padding: 0;
+}
+.slider-titik button.aktif{ background: white; width: 22px; border-radius: 4px; }
+
+.slider-panah{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.85);
+  border: none;
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+  color: var(--accent);
+  z-index: 3;
+}
+.slider-panah.kiri{ left: 12px; }
+.slider-panah.kanan{ right: 12px; }
+.slider-panah:hover{ background: white; }
+
+/* ===== Postingan Terbaru (Beranda) ===== */
+.posting-terbaru{
+  margin-top: 40px;
+}
+.posting-terbaru h2{
+  color: var(--text-dark);
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+.posting-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+.posting-kartu{
+  background: var(--card-bg);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(60,60,120,0.08);
+  text-decoration: none;
+  color: var(--text-dark);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.posting-kartu:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(60,60,120,0.14);
+}
+.posting-thumb{
+  aspect-ratio: 16/10;
+  background: linear-gradient(135deg, var(--accent-soft), #dfe3ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+}
+.posting-isi{ padding: 14px 16px 18px; }
+.posting-kategori{
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+.posting-isi h3{
+  font-size: 15px;
+  margin: 6px 0 6px;
+  line-height: 1.35;
+}
+.posting-isi .tanggal{
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 0 0 8px;
+}
+.posting-isi .ringkasan{
+  font-size: 13px;
+  color: #4b5266;
+  line-height: 1.55;
+  margin: 0;
+}
 
 /* ===== Layout ===== */
 main{
